@@ -1,33 +1,18 @@
 import 'package:flutter/material.dart';
-import '../../extensions/typing.dart';
+import 'package:quiz_app/widgets/editor_for/form_fields.dart';
+import '../../extensions/object_extensions.dart';
 
 class EditorForPrimitives<T> extends StatelessWidget {
   final T value;
+  final GlobalKey<FormState>? formKey;
 
-  const EditorForPrimitives({required this.value, super.key});
+  const EditorForPrimitives({required this.value, this.formKey, super.key});
 
   @override
   Widget build(BuildContext context) {
-    switch (value.typing) {
-      case 'int':
-        return TextFormField(
-          keyboardType: TextInputType.number,
-        );
-
-      case 'double':
-        return TextFormField(
-          keyboardType: const TextInputType.numberWithOptions(decimal: true),
-        );
-
-      case 'bool':
-        return Switch(
-          value: value as bool,
-          onChanged: (_) {},
-        );
-
-      case 'String':
-      default:
-        return TextFormField();
+    if (formKey.isNotNull) {
+      return SwitchOnFormFields(value: value, action: (_) {});
     }
+    return Container();
   }
 }
