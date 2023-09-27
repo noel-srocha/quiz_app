@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'configs/button_variants.dart';
+import 'configs/button_configs.dart';
 
 class Button extends StatelessWidget {
   final String label;
