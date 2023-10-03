@@ -5,6 +5,8 @@ import './boolean_extensions.dart';
 extension StringExtensions on String? {
   bool get isNullOrEmpty => this == null || this!.isEmpty;
   int get count => isNullOrEmpty ? 0 : this!.length;
+  String get toUpper => isNullOrEmpty ? '' : this!.toUpperCase();
+  String get toLower => isNullOrEmpty ? '' : this!.toLowerCase();
 
   String capitalize({bool isTitle = false}) {
     if (isNullOrEmpty) {
@@ -15,7 +17,7 @@ extension StringExtensions on String? {
     String modifiedPhrase = '';
 
     for (var word in wordsList) {
-      word[0].toUpperCase();
+      word[0].toUpper;
 
       modifiedPhrase += '$word ';
     }
