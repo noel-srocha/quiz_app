@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/widgets/shared/display_for.dart';
-import 'package:quiz_app/widgets/shared/display_image.dart';
+import 'package:quiz_app/widgets/shared/icon_label_button.dart';
+
+import '../widgets/shared/display_for.dart';
+import '../widgets/shared/display_image.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -18,11 +20,10 @@ class HomePage extends StatelessWidget {
           const DisplayFor(
             value: 'Learn Flutter the fun way!',
           ),
-          ElevatedButton(
+          IconLabelButton(
+            icon: Icons.play_arrow,
+            label: 'Start',
             onPressed: () {},
-            child: const DisplayFor(
-              value: 'Start'
-            ),
           ),
         ],
       ),
